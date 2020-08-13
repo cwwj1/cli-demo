@@ -66,10 +66,4 @@
         "vue-template-compiler": "^2.6.11",
         "webpack": "^3.10.0"
     },
-
-    "files": [
-        "dist",
-        "src",
-        "index.js"
-    ],
 }
