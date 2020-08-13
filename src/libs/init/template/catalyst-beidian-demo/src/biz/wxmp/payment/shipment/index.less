@@ -1,0 +1,348 @@
+// .tabs {
+//     height: 82/@g-base;
+//     display: flex;
+//     overflow-x: scroll;
+//     background-color: #fff;
+//     border-bottom: 2/@g-base solid #f2f4f6;
+//     .item-two {
+//         flex: 1;
+//         height: 82/@g-base;
+//         position: relative;
+//         .text-two {
+//             display: inline-block;
+//             width: 140/@g-base;
+//             height: 82/@g-base;
+//             text-align: center;
+//             line-height: 82/@g-base;
+//             font-size: 28/@g-base;
+//             position: absolute;
+//             top: 0;
+//             left: 50%;
+//             margin-left: -70/@g-base;
+//         }
+//     }
+//     .item-three {
+//         flex: 1;
+//         height: 82/@g-base;
+//         position: relative;
+//         .text-three {
+//             width: 116/@g-base;
+//             height: 82/@g-base;
+//             text-align: center;
+//             line-height: 82/@g-base;
+//             font-size: 28/@g-base;
+//             position: absolute;
+//             top: 0;
+//             left: 50%;
+//             margin-left: -58/@g-base;
+//         }
+//     }
+//     .item-four {
+//         flex: 1;
+//         height: 82/@g-base;
+//         position: relative;
+//         .text-four {
+//             width: 100/@g-base;
+//             height: 82/@g-base;
+//             text-align: center;
+//             line-height: 82/@g-base;
+//             font-size: 28/@g-base;
+//             position: absolute;
+//             top: 0;
+//             left: 50%;
+//             margin-left: -50/@g-base;
+//         }
+//     }
+//     .item-more {
+//         display:inline-block;
+//         width: 187/@g-base;
+//         height: 82/@g-base;
+//         .text-more {
+//             display: inline-block;
+//             width: 168/@g-base;
+//             height: 82/@g-base;
+//             text-align: center;
+//             line-height: 82/@g-base;
+//             font-size: 28/@g-base;
+//         }
+//     }
+// }
+.type-tabs {
+    position: sticky;
+    top:0;
+    z-index: 10;
+    background-color: #FFFFFF;
+    display: flex;
+    flex-direction: row;
+    white-space: nowrap;
+    .type-tab {
+        display: inline-block;
+        height: 88cpx;
+        text-align: center;
+        font-size: 28cpx;
+        color: #333333;
+        line-height: 88cpx;
+        &.lessFive{
+            flex: 1;
+        }
+        &.moreFive{
+            width: 150cpx;
+        }
+        .logistic-title{
+            display: inline-block;
+        }
+        &.active{
+            .logistic-title{
+                color: #FF1940;
+                position: relative;
+                &:after{
+                    content: '';
+                    position: absolute;
+                    bottom: 8cpx;
+                    left: 0;
+                    right: 0;
+                    height: 4cpx;
+                    border-radius: 4cpx;
+                    background:#FF1A1A;
+                }
+            }
+        }
+    }
+}
+
+.app-container{
+    background-color: rgb(242,244,246);
+}
+
+.good-info{
+    padding: 20cpx 24cpx;
+    box-sizing: border-box;
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    background: #ffffff;
+    border-top: 1px solid rgba(0,0,0,0.08);
+    .good-img{
+        width: 160cpx;
+        height: 160cpx;
+        display: block;
+    }
+    .good-title{
+        width: 522cpx;
+        text-overflow: ellipsis;
+        -webkit-line-clamp: 2;
+        -webkit-box-orient: vertical;
+        display: -webkit-box;
+        overflow: hidden;
+        word-break: break-all;
+        font-size: 26cpx;
+        color: #333333;
+        line-height: 34cpx;
+    }
+    .sku{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        font-size: 24cpx;
+        color: #999999;
+        letter-spacing: 0;
+        line-height: 32cpx;
+        margin-top: 8cpx;
+    }
+}
+.shipping-address{
+    background: #FFFFFF;
+    padding: 32cpx 24cpx;
+    box-sizing: border-box;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 16cpx;
+    .address-logo{
+        width: 64cpx;
+        height: 64cpx;
+        display: block;
+    }
+    .right-content{
+        flex: 1;
+        margin-left: 24cpx;
+    }
+    .use-info{
+        font-size: 30cpx;
+        color: #333333;
+        margin-bottom: 12cpx;
+        .use-tel{
+            font-size: 26cpx;
+            color: #999999;
+            margin-left: 20cpx;
+        }
+    }
+    .detail-address{
+        font-size: 24cpx;
+        color: #333333;
+    }
+}
+// 物流类型
+.logistic-type{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 132cpx;
+    padding: 0 24cpx;
+    box-sizing: border-box;
+    background: #ffffff;
+    margin: 0 auto 16cpx;
+    .logistic-name{
+        font-size: 30cpx;
+        color: #333333;
+        margin-bottom: 20cpx;
+    }
+    .logistic-order{
+        display: flex;
+        font-size: 26cpx;
+        color: #999999;
+        align-items: center;
+    }
+    .copy-order-id{
+        border: 1px solid rgba(61,61,61,0.40);
+        border-radius: 100cpx;
+        width: 96cpx;
+        height: 40cpx;
+        line-height: 40cpx;
+        text-align: center;
+        background: none;
+        margin-left: 16cpx;
+    }
+    .phone{
+        width: 64cpx;
+        height: 64cpx;
+        display: block;
+    }
+}
+
+// 物流信息
+.logistic-info{
+    background: #ffffff;
+    .title{
+        display: flex;
+        justify-content: space-between;
+        height: 88cpx;
+        line-height: 88cpx;
+        padding: 0 24cpx;
+        font-size: 26cpx;
+        color: #3d3d3d;
+        box-sizing: border-box;
+        margin-bottom: 40cpx;
+    }
+    .title-desc {
+        font-size: 26cpx;
+        color: #8f8f8f;
+    }
+    .shipment-items{
+        width: 702cpx;
+        margin: auto;
+        position: relative;
+        box-sizing: border-box;
+        padding-left: 24cpx;
+        
+    }
+    .shipment-item{
+        border-left: 1px solid #b8b8b8;
+        position: relative;
+        &:last-child{
+            border-left: 1px solid #ffffff;
+        }
+        &::before{
+            position: absolute;
+            left: -16cpx;
+            top: -16cpx;
+            display: block;
+            width: 28cpx;
+            height: 28cpx;
+            content: "";
+            border-radius: 50%;
+            background: #ddd;
+        }
+        // 运输中
+        // &.lnc{
+        //     &::before{
+        //         background: url(//h0.beicdn.com/open202011/8fbcee8bf80fb22a_48x48.png) center center no-repeat;
+        //         background-size: 100% 100%;
+        //     }  
+        // }
+        // // 提醒
+        // &.notice{
+        //     &::before{
+        //         background: url(//h0.beicdn.com/open202011/bb829868c3f3058b_54x54.png) center center no-repeat;
+        //         background-size: 100% 100%;
+        //     }
+        //     .shipment-time{
+        //         color: #00B34D;
+        //     }
+        // }
+        // // 已签收
+        // &.receive{
+        //     &::before{
+        //         background: url(//h0.beicdn.com/open201924/c3d5e342872691c9_48x48.png) center center no-repeat;
+        //         background-size: 100% 100%;
+        //     }
+        // }
+        // // 最新一条数据
+        &.current{
+            &::before {
+                background: #64a374;
+            }
+            .shipment-place, .shipment-time{
+                color: #64a374;
+            }
+        }
+        .shipment-place{
+            font-size: 26cpx;
+            color: #999999;
+            margin-bottom: 16cpx;
+            margin-left: 24cpx;
+            position: relative;
+            top: -16cpx;
+        }
+        .shipment-time{
+            font-size: 26cpx;
+            color: #999999;
+            margin-left: 24cpx;
+            padding-bottom: 28cpx;
+            position: relative;
+            top: -16cpx;
+        }
+        .time{
+            position: absolute;
+            left: -100cpx;
+            text-align: center;
+            top: -16cpx;
+            .month{
+                font-size: 26cpx;
+                color: #333333;
+            }
+            .second{
+                font-size: 20cpx;
+                color: #333333;
+                margin-top: 8cpx;
+            }
+        }
+    }
+}
+.tel-blue{
+    color: #4990E2;
+}
+.shipment-logistics {
+    padding: 44cpx 69cpx;
+    background: #E31436;
+    color: #FFFFFF;
+    .status {
+        font-size: 32cpx;
+        line-height: 36cpx;
+    }
+    .desc {
+        margin-top: 20cpx;
+        font-size: 24cpx;
+        line-height: 40cpx;
+    }
+}

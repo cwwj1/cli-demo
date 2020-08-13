@@ -1,0 +1,67 @@
+.barrage-item {
+    position: absolute;
+    display: inline-block;
+    width: 16rem;
+    opacity: 0.8;
+}
+.avator {
+    width: 40cpx;
+    height: 40cpx;
+    position: relative;
+    top: 8cpx;
+    border-radius: 40cpx;
+    display: inline-block;
+}
+.text {
+    height: 40cpx;
+    line-height: 40cpx;
+    font-size: 22cpx;
+    color: #FFF;
+    display: inline-block;
+}
+
+.animation {
+  animation:slidein1 5s infinite;
+  animation-timing-function:linear;
+}
+
+.a4 {
+  animation-duration: 4s;
+}
+.a5 {
+  animation-duration: 5s;
+}
+.a6 {
+  animation-duration: 6s;
+}
+.a7 {
+  animation-duration: 7s;
+}
+.a8 {
+  animation-duration: 8s;
+}
+
+@keyframes slidein1 {
+  from {
+    left: 750cpx;
+  }
+
+  to {
+    left: -750cpx;
+  }
+}
+
+.animation2 {
+  animation:slidein2 8.1s infinite;
+  animation-timing-function:linear;
+}
+
+@keyframes slidein2 {
+  from {
+    left: 1950cpx;
+  }
+
+  to {
+    left: -1200cpx;
+  }
+}
