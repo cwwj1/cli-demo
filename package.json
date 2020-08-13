@@ -18,27 +18,11 @@
         "build": "npm run clean && npm run copy && babel src -d dist --ignore 'src/libs/init/template**/*'",
         "clean": "rimraf ./dist",
         "copy": "node ./copy.js",
-        "eslint": "node_modules/.bin/eslint src test",
-        "test": "node_modules/.bin/ava test/**/*.js",
-        "test:coverage": "npx nyc npm run test",
-        "test:report": "node_modules/.bin/nyc report --reporter=text-summary",
-        "pre-commit": "bf hook pre-commit",
-        "post-commit": "bf hook post-commit",
-        "pre-push": "bf hook pre-push",
         "prepublishOnly": "bf hook prepublish",
         "postpublish": "bf hook postpublish",
         "prestart": "bf hook prestart",
         "poststart": "bf hook poststart"
     },
-    "pre-commit": [
-        "pre-commit"
-    ],
-    "post-commit": [
-        "post-commit"
-    ],
-    "pre-push": [
-        "pre-push"
-    ],
     "dependencies": {
         "chalk": "^3.0.0",
         "commander": "^4.1.0",
@@ -108,7 +92,6 @@
         ],
         "exclude": [
             "*/config/*",
-            "test/*"
         ],
         "reporter": [
             "html",
