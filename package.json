@@ -1,27 +1,31 @@
 {
-    "name": "cli-demo",
+    "name": "@fe-tool/beibei-frontend-cli",
     "version": "1.2.0",
     "repository": {
         "type": "git",
-        "url": "https://github.com/cwwj1/cli-demo.git"
+        "url": "http://git.beibei.com.cn/fe-tool/beibei-frontend-cli.git"
     },
     "keywords": [
-        "cli-demo"
+        "fe-tool",
+        "lib-common",
+        "beibei-frontend-cli"
     ],
-    "description": "跨端脚手架测试",
+    "description": "贝贝统一命令行工具",
     "bin": {
         "bf": "dist/bin/bf.js"
     },
-    "author": "weijia.cheng",
+    "homepage": "http://git.beibei.com.cn/fe-tool/beibei-frontend-cli",
+    "author": "chenjie.lu",
+    "email": "chenjie.lu@beibei.com.cn",
+    "qq": "",
+    "bugs": {
+        "url": "http://git.beibei.com.cn/fe-tool/beibei-frontend-cli/issues"
+    },
     "scripts": {
         "dev": "npm run clean && npm run copy && babel src -d dist -w --ignore 'src/libs/init/template**/*'",
         "build": "npm run clean && npm run copy && babel src -d dist --ignore 'src/libs/init/template**/*'",
         "clean": "rimraf ./dist",
-        "copy": "node ./copy.js",
-        "prepublishOnly": "bf hook prepublish",
-        "postpublish": "bf hook postpublish",
-        "prestart": "bf hook prestart",
-        "poststart": "bf hook poststart"
+        "copy": "node ./copy.js"
     },
     "dependencies": {
         "chalk": "^3.0.0",
@@ -65,5 +69,5 @@
         "vue-loader": "^14.2.2",
         "vue-template-compiler": "^2.6.11",
         "webpack": "^3.10.0"
-    },
+    }
 }

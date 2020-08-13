@@ -1,0 +1,10 @@
+{
+  "demo/animate.js": "/assets2/static/demo/animate-8d93734f.js",
+  "demo/animate.css": "/assets2/static/demo/animate-62958b39.css",
+  "demo/hello.js": "dist/static/demo/hello-78b08866.js",
+  "demo/hello.css": "dist/static/demo/hello-cd6d4276.css",
+  "wxmp/detail.js": "dist/static/wxmp/detail-abb4ec18.js",
+  "wxmp/detail.css": "dist/static/wxmp/detail-37a559c6.css",
+  "wxmp/store_home.js": "dist/static/wxmp/store_home-337157f3.js",
+  "wxmp/store_home.css": "dist/static/wxmp/store_home-cd6d4276.css"
+}

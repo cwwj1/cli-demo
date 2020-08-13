@@ -1,0 +1,426 @@
+@b: 1cpx;
+@color-basic: #333;
+@color-red: #E31436;
+@color-hint: #8F8F8F;
+.page-wrap {
+    min-height: 100vh;
+    background: #f2f4f6; 
+}
+.wrapper {
+    padding: 0 12/@b;
+}
+.flex-center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+// 地址
+.address-box {
+    border-radius: 12/@b;
+    margin-top: 16/@b;
+    display: flex;
+    align-items: center;
+    box-sizing: border-box;
+    background: #fff;
+    min-height: 120/@b;
+    padding: 24/@b;
+    .location-icon {
+        width: 64/@b;
+        height: 64/@b;
+        margin-right: 24/@b;
+    }
+    .arrow-icon {
+        margin-left: 24/@b;
+        width: 24/@b;
+        height: 24/@b;
+    }
+    .location-body {
+        flex: 1;
+        .address-main {
+            margin-bottom: 8/@b;
+            line-height: 1;
+            display: flex;
+            align-items: center;
+            .name {
+                font-weight: 600;
+                color: @color-basic;
+                font-size: 30/@b;
+                line-height: 36/@b;
+            }
+            .tel {
+                margin-left: 8/@b;
+                font-size: 24/@b;
+                color: #999;
+                line-height: 30/@b;
+            }
+        }
+        .address {
+            width: 542/@b;
+            font-size: 24/@b;
+            color: @color-basic;
+            line-height: 34/@b;
+        }
+    }
+    .no-address {
+        width: 542/@b;
+        line-height: 72/@b;
+        font-size: 30/@b;
+        line-height: 40/@b;
+        color: #333;
+    }
+}
+// 优惠
+.section-wrap {
+    margin-top: 16/@b ;
+}
+.vip-discount {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 100/@b;
+    background-color: #fff;
+    background-size: 100% 100%;
+    border-radius: 12/@b;
+    font-size: 0;
+    .align-center {
+        display: flex;
+        align-items: center;
+    }
+    .vip-left-icon {
+        margin-left: 24/@b;
+        width: 56/@b;
+        height: 56/@b;
+    }
+    .vip-title {
+        margin-left: 24/@b;
+        font-size: 30/@b;
+        line-height: 36/@b;
+        color: @color-basic;
+    }
+    .question-img-container {
+        padding: 8/@b;
+        width: 24/@b;
+        height: 24/@b;
+        .question-img {
+            width: 24/@b;
+            height: 24/@b;
+        }
+    }
+    .vip-desc {
+        text-align: right;
+        margin-right: 24/@b;
+        font-size: 28/@b;
+        line-height: 28/@b;
+        color: @color-red;
+        .discount-desc {
+            margin-top: 12/@b;
+            font-size: 22/@b;
+            color: #888;
+        }
+    }
+}
+// 底部信息
+.gopay-bar{
+    background-color: #fff;
+    position: fixed;
+    z-index: 9;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    box-shadow: inset 0 1px 0 0 rgba(0,0,0,0.08);
+    .gopay {
+        text-align: right;
+    }
+    .pay-info {
+        display: inline-block;
+        margin-right: 18/@b;
+        vertical-align: middle;
+        max-width: 375/@b;
+        overflow: hidden;
+        white-space: nowrap;
+        box-sizing: border-box;
+    }
+    .pay-num {
+        font-size: 26/@b;
+        line-height: 34/@b;
+        color: @color-red;
+    }
+    .pay-tips {
+        color: @color-hint;
+        font-size: 22/@b;
+        line-height: 28/@b;
+    }
+
+    .gopay-new-btn {
+        display: inline-block;
+        height: 90/@b;
+        line-height: 90/@b;
+        padding: 0 52/@b;
+        font-size: 36/@b;
+        border: 1px solid transparent;
+        white-space: nowrap;
+        background: @color-red;
+        color: #fff;
+    }
+}
+// 优惠说明弹窗
+.vip-tips-outter {
+    background: rgba(0, 0, 0, .6);
+    height: 100vh;
+    position: absolute;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    display: flex;
+    align-items: flex-end;
+    z-index: 9;
+}
+.vip-tips-container {
+    display: flex;
+    flex-direction: column;
+    background: #FFFFFF;
+    border-radius: 12/@b 12/@b 0 0;
+    .vip-modal-header {
+        // position: relative;
+        height: 120/@b;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        .vip-modal-title {
+            font-weight: 600;
+            font-size: 32/@b;
+            color: #222;
+            line-height: 40/@b;
+        }
+    }
+    .vip-modal-content {
+        padding: 0 24/@b 108/@b;
+        // min-height: 482/@b;
+        max-height: 960/@b;
+        box-sizing: border-box;
+        overflow: scroll;
+        .vip-modal-item {
+            font-size: 28/@b;
+            color: #222;
+        }
+    }
+    .vip-close-btn {
+        width: 702/@b;
+        height: 88/@b;
+        background-image: linear-gradient(135deg, #FA143A 0%, #E31436 100%);
+        border-radius: 44/@b;
+        .flex-center();
+        font-size: 32/@b;
+        color: #fff;
+        line-height: 34/@b;
+        margin-bottom: 16/@b;
+    }
+}
+// 商品信息
+.order-box {
+    margin-top: 16/@b;
+    border-radius: 12/@b 12/@b 0 0;
+    background: #fff;
+    padding-left: 24/@b;
+    .order-box-bd {
+        .order-item {
+            height: 228/@b;
+            box-sizing: border-box;
+            padding: 24/@b 24/@b 24/@b 0;
+            position: relative;
+            display: flex;
+            .order-img {
+                width: 180/@b;
+                height: 180/@b;
+                margin-right: 24/@b;
+            }
+            .order-info {
+                .order-info-title {
+                    max-width: 474/@b;
+                    min-height: 72/@b;
+                    color: @color-basic;
+                    font-size: 26/@b;
+                    overflow : hidden;
+                    text-overflow: ellipsis;
+                    display: -webkit-box;
+                    -webkit-line-clamp: 2;
+                    -webkit-box-orient: vertical;
+                }
+                .order-info-sku_props {
+                    display: flex;
+                    justify-content: space-between;
+                    margin-top: 16/@b;
+                    color: #999;
+                    font-size: 24/@b;
+                    line-height: 30/@b;
+                }
+                .order-item-price {
+                    display: flex;
+                    margin-top: 16/@b;
+                    font-size: 26/@b;
+                    color: @color-basic;
+                    font-weight: 600;
+                }
+            }
+            .order-buy-nums {
+                color: #999;
+                font-size: 24/@b;
+            }
+        }
+    }
+
+}
+// 购买数量
+.order-num-wrap {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    height: 108/@b;
+    width: 702/@b;
+    margin-top: 10/@b;
+    border-top: 1px solid rgba(0,0,0,0.08);
+    .order-num-title {
+        margin-right: 16/@b;
+        font-size: 24/@b;
+        color: @color-hint;
+    }
+    .order-num-left, .order-num-right {
+        width: 60/@b;
+        height: 60/@b;
+        line-height: 60/@b;
+        text-align: center;
+        color: rgba(47,52,60,0.80);
+        background: rgba(0, 0, 0, 0.06);
+        &.ban {
+            color: rgba(47,52,60,0.20);
+        }
+    }
+    .order-num-right {
+        margin-right: 24/@b;
+    }
+    .order-num-text {
+        height: 60/@b;
+        line-height: 60/@b;
+        margin: 0 2/@b;
+        padding: 0 33/@b;
+        font-size: 32/@b;
+        background: rgba(0,0,0,0.06);
+    }
+}
+
+// 金额信息
+.order-box-ft {
+    background: #fff;
+    padding: 16/@b 24/@b;
+    margin:16/@b 0 90/@b;
+    border-radius: 12/@b;
+    .order-mj {
+        height: 60/@b;
+        display: flex;
+        justify-content: space-between;
+        overflow: hidden;
+        align-items: center;
+    }
+    .expense-left-block {
+        max-width: 500/@b;
+        white-space: nowrap;
+    }
+    .order-text {                
+        font-size: 26/@b;
+        color: #666;
+    }
+    .order-text-gold {
+        color: #94431B;
+    }
+    .order-val {
+        font-size: 26/@b;
+        color: #999;
+    }
+    .order-val-red {
+        display: flex;
+        font-size: 26/@b;
+        text-align: right;
+        color: @color-red;
+        .order-val-bold {
+            margin-left: 5/@b;
+            font-weight: 600;
+        }
+    }
+}
+// 修改数字弹窗
+.change-num-wrap {
+    background: rgba(0, 0, 0, .6);
+    height: 100%;
+    position: fixed;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    z-index: 99;
+}
+.change-num {
+    margin: auto;
+    width: 600/@b;
+    border-radius: 12/@b;
+    background-color: #fff;
+    .change-num-title {
+        margin-top: 40/@b;
+        .flex-center();
+        font-weight: 600;
+        font-size: 32/@b;
+        color: #333;
+        height: 38/@b;
+    }
+    .change-num-inputnum {
+        margin-top: 40/@b;
+        display: flex;
+        justify-content: center;
+        .inputnum-reduce-btn, .inputnum-add-btn {
+            display: flex;
+            width: 88/@b;
+            height: 88/@b;
+            align-items: center;
+            justify-content: center;
+            background: #F8F8F8;
+            .inputnum-img {
+                width: 24/@b;
+                height: 24/@b;
+            }
+        }
+        .inputnum-input {
+            margin: 0 1px;
+            width: 140/@b;
+            height: 88/@b;
+            line-height: 88/@b;
+            text-align: center;
+            background: #F5F5F5;
+        }
+    }
+    .btn-groups {
+        margin: 40/@b;
+        display: flex;
+        justify-content: center;
+        .btn-item {
+            width: 244/@b;
+            height: 88/@b;
+            font-weight: 600;
+            font-size: 32/@b;
+            text-align: center;
+            line-height: 88/@b;
+            border-radius: 44/@b;
+        }
+        .cancel-btn {
+            color: @color-red;
+            border: 1px solid rgba(227,20,54,0.60);
+        }
+        .ensure-btn {
+            margin-left: 32/@b;
+            color: #FFF;
+            background-image: linear-gradient(135deg, #FA143A 0%, #E31436 100%);
+        }
+    }
+}

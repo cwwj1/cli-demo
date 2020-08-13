@@ -1,0 +1,12 @@
+# 不用加入eslint的目录
+
+n
+bin
+config
+node_modules
+index.web.js
+src/common
+
+src/version.js
+
+src/wxmp

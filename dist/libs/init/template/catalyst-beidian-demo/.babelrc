@@ -1,0 +1,24 @@
+{
+    "presets": ["es2015", "stage-0"],
+    "plugins": [
+        "transform-object-assign",
+        [
+            "transform-runtime",
+            {
+                "helpers": false,
+                "polyfill": false,
+                "regenerator": true,
+                "moduleName": "babel-runtime"
+            }
+        ],
+        [
+            "add-module-exports",
+            "component",
+            {
+                "libraryName": "@weex/forza-weex",
+                "libDir": "packages",
+                "style": false
+            }
+        ]
+    ]
+}
