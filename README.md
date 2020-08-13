@@ -53,41 +53,41 @@ $ npm install -g @fe-tool/beibei-frontend-cli --registry="http://npm.repos.beibe
 
 - 查询帮助
 ```bash
-    $ bf -h(--help)
+    $ ctl -h(--help)
 
-    $ bf [command] -h(--help)
+    $ ctl [command] -h(--help)
 ```
 
 - 初始化基础库工程
 ```bash
-    $ bf init
+    $ ctl init
 ```
 
 - 检查基础库工程
 ```bash
-    $ bf check
+    $ ctl check
 ```
 
 - 发布基础库工程
 ```bash
-    $ bf publish
+    $ ctl publish
 ```
 
 - 启动docker服务
 ```bash
-    $ bf start
+    $ ctl start
 
-    $ bf start -p win // windows环境下启动docker
+    $ ctl start -p win // windows环境下启动docker
 ```
 
 - 启动本地服务
 ```bash
-    $ bf dev -f detail/detail
+    $ ctl dev -f detail/detail
 ```
 
 - 打包工程
 ```bash
-    $ bf build
+    $ ctl build
 ```
 
 - 执行hook
@@ -100,14 +100,14 @@ $ npm install -g @fe-tool/beibei-frontend-cli --registry="http://npm.repos.beibe
 
 ``` JSON
 // scripts
-"pre-commit": "bf hook pre-commit",
-"post-commit": "bf hook post-commit",
-"pre-push": "bf hook pre-push",
-"postinstall": "bf hook postinstall",
-"prepublishOnly": "bf hook prepublish",
-"postpublish": "bf hook postpublish",
-"prestart": "bf hook prestart",
-"poststart": "bf hook poststart"
+"pre-commit": "ctl hook pre-commit",
+"post-commit": "ctl hook post-commit",
+"pre-push": "ctl hook pre-push",
+"postinstall": "ctl hook postinstall",
+"prepublishOnly": "ctl hook prepublish",
+"postpublish": "ctl hook postpublish",
+"prestart": "ctl hook prestart",
+"poststart": "ctl hook poststart"
 // hook
 "pre-commit": [
     "pre-commit"
@@ -121,7 +121,7 @@ $ npm install -g @fe-tool/beibei-frontend-cli --registry="http://npm.repos.beibe
 ```
 
 ```bash
-    $ bf hook pre-commit
+    $ ctl hook pre-commit
 ```
 
 _ _ _
@@ -136,7 +136,7 @@ _ _ _
 初始化新建一个基础库工程；通过命令行交互根据提示输入基础库类型、包名与描述来初新建工程
 
 ``` bash
- $ bf init
+ $ ctl init
 ```
 
 #### check
@@ -150,23 +150,23 @@ _ _ _
 - 检查是否使用bf进行提交
 
 ``` bash
-  $ bf check
+  $ ctl check
 ```
 
 #### publish
 
-发布模块，发布前会执行 `bf check`，发布后会执行自动打tag至gitlab
+发布模块，发布前会执行 `ctl check`，发布后会执行自动打tag至gitlab
 
 ``` bash
-  $ bf publish
+  $ ctl publish
 ```
 
 #### check:env
 
-工程通用性检查，调用远程js脚本进行检查，脚本地址为`http://git.beibei.com.cn/public_group/bf-cli/raw/master/check-env.js`
+工程通用性检查，调用远程js脚本进行检查，脚本地址为`http://git.beibei.com.cn/public_group/ctl-cli/raw/master/check-env.js`
 
 ```bash
-    $ bf check:env
+    $ ctl check:env
 ```
 
 #### start
@@ -179,7 +179,7 @@ _ _ _
 - -p --platform docker执行的平台，可选参数为 `win`  `other`默认为other
 
 ```bash
-    $ bf start
+    $ ctl start
 ```
 
 #### dev
@@ -194,7 +194,7 @@ _ _ _
 - -c --ctl-build-type catalyst使用，指定打包类型，默认为all 可选参数为 `all` , `weex` , `web` , `wxmp` , `old_wxmp` , `new_wxmp`
 
 ```bash
-    $ bf dev -f detail/detail
+    $ ctl dev -f detail/detail
 ```
 
 #### build
@@ -206,7 +206,7 @@ _ _ _
 - -f --filter 需要监听的页面地址
 
 ```bash
-    $ bf build -f detail/detail
+    $ ctl build -f detail/detail
 ```
 
 #### build:lib
@@ -218,7 +218,7 @@ _ _ _
 - -f --filter 需要监听的页面地址
 
 ```bash
-    $ bf build:lib -f vue
+    $ ctl build:lib -f vue
 ```
 
 #### build:hms
@@ -230,7 +230,7 @@ _ _ _
 - -f --filter 需要监听的页面地址
 
 ```bash
-    $ bf build:hms
+    $ ctl build:hms
 ```
 
 #### hook
@@ -242,7 +242,7 @@ _ _ _
 - -h --help 获取帮助
 
 ``` bash
-    bf hook pre-commit
+    ctl hook pre-commit
 ```
 
 <!-- 文档END -->

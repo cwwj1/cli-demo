@@ -2,8 +2,8 @@ import * as fs from 'fs';
 import request from 'request';
 
 export const checkEnv = () => {
-    const filePath = '/tmp/bf-check-env.js';
-    return new Promise((resolve) => request.get('http://git.beibei.com.cn/public_group/bf-cli/raw/master/check-env.js', {
+    const filePath = '/tmp/ctl-check-env.js';
+    return new Promise((resolve) => request.get('http://git.beibei.com.cn/public_group/ctl-cli/raw/master/check-env.js', {
         timeout: 2000,
     }, (_error, response) => {
         let code = '';

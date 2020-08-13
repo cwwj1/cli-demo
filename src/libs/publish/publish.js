@@ -12,7 +12,7 @@ const postPublish = _postPublish;
 const publish = async () => {
     process.env.BF_CHECK = 'pass';
     await check();
-    console.log(chalk.green('1) bf check success'));
+    console.log(chalk.green('1) ctl check success'));
     const {args = []} = commander;
     const dir = args[0] || '';
     if (!execSync(`npm publish ${dir} --registry="http://npm.repos.beibei.com.cn"`)) {

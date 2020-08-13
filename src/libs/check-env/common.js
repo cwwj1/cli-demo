@@ -12,12 +12,12 @@ const isExecuteInOneHour = (filePath) => {
 };
 
 export default () => {
-    const filePath = '/tmp/bf-check-common.js';
+    const filePath = '/tmp/ctl-check-common.js';
     // 一小时检测一次版本
     if (isExecuteInOneHour(filePath)) {
         return Promise.resolve();
     }
-    return new Promise((resolve) => request.get('http://git.beibei.com.cn/public_group/bf-cli/raw/master/check-common.js', {
+    return new Promise((resolve) => request.get('http://git.beibei.com.cn/public_group/ctl-cli/raw/master/check-common.js', {
         timeout: 2000,
     }, (_error, response) => {
         let code = '';

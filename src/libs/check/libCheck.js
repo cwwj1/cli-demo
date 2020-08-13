@@ -119,7 +119,7 @@ const checkTag = () => {
             shell.exit(1);
         }
     } else {
-        console.log(chalk.green('✅ bf check通过，请使用bf publish发布'));
+        console.log(chalk.green('✅ ctl check通过，请使用bf publish发布'));
     }
 };
 
