@@ -18,13 +18,6 @@
         "build": "npm run clean && npm run copy && babel src -d dist --ignore 'src/libs/init/template**/*'",
         "clean": "rimraf ./dist",
         "copy": "node ./copy.js",
-        "eslint": "node_modules/.bin/eslint src test",
-        "test": "node_modules/.bin/ava test/**/*.js",
-        "test:coverage": "npx nyc npm run test",
-        "test:report": "node_modules/.bin/nyc report --reporter=text-summary",
-        "pre-commit": "bf hook pre-commit",
-        "post-commit": "bf hook post-commit",
-        "pre-push": "bf hook pre-push",
         "prepublishOnly": "bf hook prepublish",
         "postpublish": "bf hook postpublish",
         "prestart": "bf hook prestart",
@@ -73,33 +66,10 @@
         "vue-template-compiler": "^2.6.11",
         "webpack": "^3.10.0"
     },
-    "peerDependencies": {
-        "@fe-tool/config-aggregate": ">=1.1.0"
-    },
+
     "files": [
         "dist",
         "src",
         "index.js"
     ],
-    "nyc": {
-        "check-coverage": true,
-        "lines": 55,
-        "extension": [
-            ".js"
-        ],
-        "include": [
-            "src/libs/**/*.js"
-        ],
-        "exclude": [
-            "*/config/*",
-            "test/*"
-        ],
-        "reporter": [
-            "html",
-            "lcov",
-            "text"
-        ],
-        "sourceMap": false,
-        "instrument": false
-    }
 }
