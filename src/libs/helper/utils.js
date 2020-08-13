@@ -96,21 +96,21 @@ export const getProject = (type) => {
         console.error(chalk.red(`❌ 当前文件：${fullPath}不存在！`));
         shell.exit(1);
     }
-    // const keywords = require(fullPath).keywords || []; // eslint-disable-line global-require
-    // if (keywords.includes('lib-catalyst')) {
-    //     return 'lib-catalyst';
-    // } else if (keywords.includes('lib-node')) {
-    //     return 'lib-node';
-    // } else if (keywords.includes('lib-common')) {
-    //     return 'lib-common';
-    // } else if (keywords.includes('airjs-common')) {
-    //     return 'airjs-common';
-    // } else if (keywords.includes('catalyst')) {
-    //     return 'catalyst';
-    // } else if (keywords.includes('console')) {
-    //     return 'console';
-    // }
-    // console.error(chalk.red(`❌ 当前keywords：${keywords}不符合规范！，请使用'lib-catalyst', 'lib-node', 'lib-common', 'airjs-common', 'catalyst', 'console'`));
+    const keywords = require(fullPath).keywords || []; // eslint-disable-line global-require
+    if (keywords.includes('lib-catalyst')) {
+        return 'lib-catalyst';
+    } else if (keywords.includes('lib-node')) {
+        return 'lib-node';
+    } else if (keywords.includes('lib-common')) {
+        return 'lib-common';
+    } else if (keywords.includes('airjs-common')) {
+        return 'airjs-common';
+    } else if (keywords.includes('catalyst')) {
+        return 'catalyst';
+    } else if (keywords.includes('console')) {
+        return 'console';
+    }
+    console.error(chalk.red(`❌ 当前keywords：${keywords}不符合规范！，请使用'lib-catalyst', 'lib-node', 'lib-common', 'airjs-common', 'catalyst', 'console'`));
     shell.exit(1);
     return '';
 };

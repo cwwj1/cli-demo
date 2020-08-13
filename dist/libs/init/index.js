@@ -1,20 +1,43 @@
-/* eslint-disable no-process-exit */
-/* eslint-disable no-console */
-// import commander from 'commander';
-import inquirer from 'inquirer';
-import { initCatalystBeidianDemo } from './catalyst-bedian-demo';
-import { initCatalystBeicangDemo } from './catalyst-beicang-demo';
-import chalk from 'chalk';
-import { execSync } from '../helper/utils';
-import * as path from 'path';
+'use strict';
+
+Object.defineProperty(exports, "__esModule", {
+    value: true
+});
+exports.init = undefined;
+
+var _inquirer = require('inquirer');
+
+var _inquirer2 = _interopRequireDefault(_inquirer);
+
+var _catalystBedianDemo = require('./catalyst-bedian-demo');
+
+var _catalystBeicangDemo = require('./catalyst-beicang-demo');
+
+var _chalk = require('chalk');
+
+var _chalk2 = _interopRequireDefault(_chalk);
+
+var _utils = require('../helper/utils');
+
+var _path = require('path');
+
+var path = _interopRequireWildcard(_path);
+
+function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } else { var newObj = {}; if (obj != null) { for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) newObj[key] = obj[key]; } } newObj.default = obj; return newObj; } }
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
 // import request from 'request';
 
 // program: commander.CommanderStatic
 
-const cwd = process.cwd();
+/* eslint-disable no-process-exit */
+/* eslint-disable no-console */
+// import commander from 'commander';
+var cwd = process.cwd();
 
-export const init = async function () {
-    const promptList = [{
+var init = exports.init = async function init() {
+    var promptList = [{
         type: 'list',
         name: 'libType',
         message: '请选择框架类型?',
@@ -38,7 +61,7 @@ export const init = async function () {
         type: 'input',
         name: 'appid',
         message: '输入小程序appID（默认为空）',
-        validate: iuput => {
+        validate: function validate(iuput) {
             return true;
             // if (iuput.length > 0) {
             //     return true;
@@ -50,28 +73,28 @@ export const init = async function () {
         type: 'input',
         name: 'projectName',
         message: '请输入工程名称',
-        validate: iuput => {
+        validate: function validate(iuput) {
             if (iuput.length > 0) {
                 return true;
             }
-            console.log(chalk.red('\n必须填写工程名字'));
+            console.log(_chalk2.default.red('\n必须填写工程名字'));
             return false;
         }
     }];
 
-    const answer = await inquirer.prompt(promptList);
+    var answer = await _inquirer2.default.prompt(promptList);
     console.log('--------------answer--------------', answer);
 
     // MARK: init
 
-    console.log(`🚚 [1/3]开始初始化基础库模板...`);
+    console.log('\uD83D\uDE9A [1/3]\u5F00\u59CB\u521D\u59CB\u5316\u57FA\u7840\u5E93\u6A21\u677F...');
 
     if (answer.platform === '贝店') {
-        initCatalystBeidianDemo(answer);
+        (0, _catalystBedianDemo.initCatalystBeidianDemo)(answer);
     } else if (answer.platform === '贝仓') {
-        initCatalystBeicangDemo(answer);
+        (0, _catalystBeicangDemo.initCatalystBeicangDemo)(answer);
     }
-    console.log(chalk.green(`✅ 模板文件初始化完成`));
+    console.log(_chalk2.default.green('\u2705 \u6A21\u677F\u6587\u4EF6\u521D\u59CB\u5316\u5B8C\u6210'));
 
     // console.log(`🔎 [2/3]开始安装生产依赖...`);
     // if (prods.length) {
@@ -93,12 +116,6 @@ export const init = async function () {
 
     // MARK: end
     console.log('\n\n\n');
-    console.log(chalk.green(`
-    ____       _ __         _    _________ 
-   / __ )___  (_) /_  ___  (_)  / ____/ (_)
-  / __  / _ \\/ / __ \\/ _ \\/ /  / /   / / / 
- / /_/ /  __/ / /_/ /  __/ /  / /___/ / /  
-/_____/\\___/_/_.___/\\___/_/   \\____/_/_/   
-                                           `));
+    console.log(_chalk2.default.green('\n    ____       _ __         _    _________ \n   / __ )___  (_) /_  ___  (_)  / ____/ (_)\n  / __  / _ \\/ / __ \\/ _ \\/ /  / /   / / / \n / /_/ /  __/ / /_/ /  __/ /  / /___/ / /  \n/_____/\\___/_/_.___/\\___/_/   \\____/_/_/   \n                                           '));
     console.log('\n\n\n');
 };

@@ -1,8 +1,29 @@
-import chalk from 'chalk';
-import shell from 'shelljs';
-import { execSync as _execSync } from 'child_process';
-import fs from 'fs';
-import path from 'path';
+'use strict';
+
+Object.defineProperty(exports, "__esModule", {
+    value: true
+});
+exports.getProject = exports.compare = exports.execSync = undefined;
+
+var _chalk = require('chalk');
+
+var _chalk2 = _interopRequireDefault(_chalk);
+
+var _shelljs = require('shelljs');
+
+var _shelljs2 = _interopRequireDefault(_shelljs);
+
+var _child_process = require('child_process');
+
+var _fs = require('fs');
+
+var _fs2 = _interopRequireDefault(_fs);
+
+var _path = require('path');
+
+var _path2 = _interopRequireDefault(_path);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 /* ------------------------------ execSync ------------------------------ */
 
@@ -12,7 +33,7 @@ import path from 'path';
  * @param execSyncOptions execSync额外参数
  * @description execSync函数二次分装
  */
-export const execSync = (evalCode, execSyncOptions, forceExit) => {
+var execSync = exports.execSync = function execSync(evalCode, execSyncOptions, forceExit) {
     if (typeof execSyncOptions === 'boolean') {
         forceExit = execSyncOptions;
         execSyncOptions = {
@@ -21,14 +42,14 @@ export const execSync = (evalCode, execSyncOptions, forceExit) => {
         };
     }
     try {
-        const result = _execSync(evalCode, Object.assign({
+        var result = (0, _child_process.execSync)(evalCode, Object.assign({
             encoding: 'utf8'
         }, execSyncOptions));
         return (result || '').trim();
     } catch (error) {
-        !(execSyncOptions && execSyncOptions.slience) && console.error(chalk.red(`${evalCode} execError: \n `), error.stderr || error.stdout || error);
+        !(execSyncOptions && execSyncOptions.slience) && console.error(_chalk2.default.red(evalCode + ' execError: \n '), error.stderr || error.stdout || error);
         if (forceExit) {
-            shell.exit(1);
+            _shelljs2.default.exit(1);
         }
         return error;
     }
@@ -42,12 +63,12 @@ export const execSync = (evalCode, execSyncOptions, forceExit) => {
  * @returns 转换以后的数字数组
  * @description 将数字或以点隔开的数字字符串切割为数组，不可转换为数字的字符串转化为0
  */
-const convertToArray = target => {
+var convertToArray = function convertToArray(target) {
     if (typeof target === 'number') {
         return [target];
     }
-    return target.split('.').map(item => {
-        const numberItem = Number(item);
+    return target.split('.').map(function (item) {
+        var numberItem = Number(item);
         return !Number.isNaN(numberItem) ? numberItem : 0;
     });
 };
@@ -58,15 +79,15 @@ const convertToArray = target => {
  * @param target 被比较的数字或字符串
  * @returns 1: source 大于target -1: source 小于target 0: source等于target
  */
-export const compare = (source, target) => {
+var compare = exports.compare = function compare(source, target) {
     if (source === target) {
         return 0;
     }
-    const arrayedSource = convertToArray(source);
-    const arrayedTarget = convertToArray(target);
-    for (const index in arrayedSource) {
-        const _source = arrayedSource[index];
-        const _target = arrayedTarget[index] || 0;
+    var arrayedSource = convertToArray(source);
+    var arrayedTarget = convertToArray(target);
+    for (var index in arrayedSource) {
+        var _source = arrayedSource[index];
+        var _target = arrayedTarget[index] || 0;
         if (_source > _target) {
             return 1;
         } else if (_source < _target) {
@@ -80,31 +101,31 @@ export const compare = (source, target) => {
 };
 
 /* ------------------------------ getProject ------------------------------ */
-export const getProject = type => {
+var getProject = exports.getProject = function getProject(type) {
     if (['lib-common', 'lib-catalyst', 'lib-node', 'airjs-common', 'catalyst', 'console'].includes(type || '')) {
         return type || '';
     }
-    const fullPath = path.resolve('./package.json');
-    const isExist = fs.existsSync(fullPath);
+    var fullPath = _path2.default.resolve('./package.json');
+    var isExist = _fs2.default.existsSync(fullPath);
     if (!isExist) {
-        console.error(chalk.red(`❌ 当前文件：${fullPath}不存在！`));
-        shell.exit(1);
+        console.error(_chalk2.default.red('\u274C \u5F53\u524D\u6587\u4EF6\uFF1A' + fullPath + '\u4E0D\u5B58\u5728\uFF01'));
+        _shelljs2.default.exit(1);
     }
-    // const keywords = require(fullPath).keywords || []; // eslint-disable-line global-require
-    // if (keywords.includes('lib-catalyst')) {
-    //     return 'lib-catalyst';
-    // } else if (keywords.includes('lib-node')) {
-    //     return 'lib-node';
-    // } else if (keywords.includes('lib-common')) {
-    //     return 'lib-common';
-    // } else if (keywords.includes('airjs-common')) {
-    //     return 'airjs-common';
-    // } else if (keywords.includes('catalyst')) {
-    //     return 'catalyst';
-    // } else if (keywords.includes('console')) {
-    //     return 'console';
-    // }
-    // console.error(chalk.red(`❌ 当前keywords：${keywords}不符合规范！，请使用'lib-catalyst', 'lib-node', 'lib-common', 'airjs-common', 'catalyst', 'console'`));
-    shell.exit(1);
+    var keywords = require(fullPath).keywords || []; // eslint-disable-line global-require
+    if (keywords.includes('lib-catalyst')) {
+        return 'lib-catalyst';
+    } else if (keywords.includes('lib-node')) {
+        return 'lib-node';
+    } else if (keywords.includes('lib-common')) {
+        return 'lib-common';
+    } else if (keywords.includes('airjs-common')) {
+        return 'airjs-common';
+    } else if (keywords.includes('catalyst')) {
+        return 'catalyst';
+    } else if (keywords.includes('console')) {
+        return 'console';
+    }
+    console.error(_chalk2.default.red('\u274C \u5F53\u524Dkeywords\uFF1A' + keywords + '\u4E0D\u7B26\u5408\u89C4\u8303\uFF01\uFF0C\u8BF7\u4F7F\u7528\'lib-catalyst\', \'lib-node\', \'lib-common\', \'airjs-common\', \'catalyst\', \'console\''));
+    _shelljs2.default.exit(1);
     return '';
 };

@@ -1,33 +1,52 @@
 {
-    "name": "@fe-tool/beibei-frontend-cli",
+    "name": "ctl-cli",
     "version": "1.2.0",
     "repository": {
         "type": "git",
-        "url": "http://git.beibei.com.cn/fe-tool/beibei-frontend-cli.git"
+        "url": ""
     },
     "keywords": [
         "fe-tool",
         "lib-common",
         "beibei-frontend-cli"
     ],
-    "description": "贝贝统一命令行工具",
+    "description": "跨端命令行工具",
     "bin": {
-        "bf": "dist/bin/bf.js"
+        "ctl": "dist/bin/ctl.js"
     },
-    "homepage": "http://git.beibei.com.cn/fe-tool/beibei-frontend-cli",
-    "author": "chenjie.lu",
-    "email": "chenjie.lu@beibei.com.cn",
-    "qq": "",
+    "homepage": "",
+    "author": "weijia.cheng",
     "bugs": {
-        "url": "http://git.beibei.com.cn/fe-tool/beibei-frontend-cli/issues"
+        "url": ""
     },
     "scripts": {
         "dev": "npm run clean && npm run copy && babel src -d dist -w --ignore 'src/libs/init/template**/*'",
         "build": "npm run clean && npm run copy && babel src -d dist --ignore 'src/libs/init/template**/*'",
         "clean": "rimraf ./dist",
-        "copy": "node ./copy.js"
+        "copy": "node ./copy.js",
+        "eslint": "node_modules/.bin/eslint src test",
+        "test": "node_modules/.bin/ava test/**/*.js",
+        "test:coverage": "npx nyc npm run test",
+        "test:report": "node_modules/.bin/nyc report --reporter=text-summary",
+        "pre-commit": "ctl hook pre-commit",
+        "post-commit": "ctl hook post-commit",
+        "pre-push": "ctl hook pre-push",
+        "prepublishOnly": "ctl hook prepublish",
+        "postpublish": "ctl hook postpublish",
+        "prestart": "ctl hook prestart",
+        "poststart": "ctl hook poststart"
     },
+    "pre-commit": [
+        "pre-commit"
+    ],
+    "post-commit": [
+        "post-commit"
+    ],
+    "pre-push": [
+        "pre-push"
+    ],
     "dependencies": {
+        "@fe-tool/image-check": "^0.1.4",
         "chalk": "^3.0.0",
         "commander": "^4.1.0",
         "compare-versions": "^3.5.1",
@@ -45,6 +64,7 @@
     },
     "devDependencies": {
         "@fe-base/eslint-config": "^0.11.0",
+        "ava": "^0.24.0",
         "babel-cli": "^6.26.0",
         "babel-core": "^6.24.0",
         "babel-eslint": "^10.0.3",
@@ -69,5 +89,40 @@
         "vue-loader": "^14.2.2",
         "vue-template-compiler": "^2.6.11",
         "webpack": "^3.10.0"
+    },
+    "peerDependencies": {
+        "@fe-tool/config-aggregate": ">=1.1.0"
+    },
+    "files": [
+        "dist",
+        "src",
+        "index.js"
+    ],
+    "ava": {
+        "require": [
+            "babel-register"
+        ],
+        "babel": "inherit"
+    },
+    "nyc": {
+        "check-coverage": true,
+        "lines": 55,
+        "extension": [
+            ".js"
+        ],
+        "include": [
+            "src/libs/**/*.js"
+        ],
+        "exclude": [
+            "*/config/*",
+            "test/*"
+        ],
+        "reporter": [
+            "html",
+            "lcov",
+            "text"
+        ],
+        "sourceMap": false,
+        "instrument": false
     }
 }
