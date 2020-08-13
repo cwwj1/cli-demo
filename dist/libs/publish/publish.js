@@ -35,7 +35,7 @@ var postPublish = _postpublish2.default;
 var publish = async function publish() {
     process.env.BF_CHECK = 'pass';
     await check();
-    console.log(_chalk2.default.green('1) bf check success'));
+    console.log(_chalk2.default.green('1) ctl check success'));
     var _commander$args = _commander2.default.args,
         args = _commander$args === undefined ? [] : _commander$args;
 

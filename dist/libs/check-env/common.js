@@ -27,13 +27,13 @@ var isExecuteInOneHour = function isExecuteInOneHour(filePath) {
 };
 
 exports.default = function () {
-    var filePath = '/tmp/bf-check-common.js';
+    var filePath = '/tmp/ctl-check-common.js';
     // 一小时检测一次版本
     if (isExecuteInOneHour(filePath)) {
         return Promise.resolve();
     }
     return new Promise(function (resolve) {
-        return _request2.default.get('http://git.beibei.com.cn/public_group/bf-cli/raw/master/check-common.js', {
+        return _request2.default.get('http://git.beibei.com.cn/public_group/ctl-cli/raw/master/check-common.js', {
             timeout: 2000
         }, function (_error, response) {
             var code = '';

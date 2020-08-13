@@ -90,9 +90,8 @@ var transform = exports.transform = function transform(answer, sourcePath, relat
                 console.log('新建文件夹：', dirname);
             }
             // 写入文件内容
-            var data = fs.readFileSync(file, {
-                encoding: 'utf8'
-            });
+            console.log('file,', file);
+            var data = fs.readFileSync(file);
             var wirteContent = eval(data); // eslint-disable-line no-eval
             fs.writeFileSync(path.join(dirname, filename), wirteContent);
         }

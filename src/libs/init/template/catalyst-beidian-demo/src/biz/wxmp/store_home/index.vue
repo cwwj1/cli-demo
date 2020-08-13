@@ -71,13 +71,12 @@
                 <!-- 访客&订单&销售 -->
                 <view
                     class="income-wrap flex-center">
-                    <view class="income-item flex-col-center">
-                        <!-- <view class="point"></view> -->
+                    <!-- <view class="income-item flex-col-center">
                         <text class="income-item-num">
                             {{ storeMainStatistic.todayVisitNum }}
                         </text>
                         <text class="income-block-desc">今日访客</text>
-                    </view>
+                    </view> -->
                     <view class="income-item flex-col-center">
                         <!-- <view class="point"></view> -->
                         <text class="income-item-num">
@@ -317,7 +316,7 @@ export default {
                 page: this.page,
                 pageSize: this.pageSize,
                 storeCode: this.storeCode || '018mgRhiO9eAEYqWrQ2VLsfWBt9',
-                // testUid: 112408993,
+                testUid: 112408993,
                 // testUid: 123456,
             })
                 .then((res) => {

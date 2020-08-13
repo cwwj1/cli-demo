@@ -18,9 +18,9 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } else { var newObj = {}; if (obj != null) { for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) newObj[key] = obj[key]; } } newObj.default = obj; return newObj; } }
 
 var checkEnv = exports.checkEnv = function checkEnv() {
-    var filePath = '/tmp/bf-check-env.js';
+    var filePath = '/tmp/ctl-check-env.js';
     return new Promise(function (resolve) {
-        return _request2.default.get('http://git.beibei.com.cn/public_group/bf-cli/raw/master/check-env.js', {
+        return _request2.default.get('http://git.beibei.com.cn/public_group/ctl-cli/raw/master/check-env.js', {
             timeout: 2000
         }, function (_error, response) {
             var code = '';

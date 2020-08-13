@@ -142,7 +142,7 @@ var checkTag = function checkTag() {
             shell.exit(1);
         }
     } else {
-        console.log(_chalk2.default.green('✅ bf check通过，请使用bf publish发布'));
+        console.log(_chalk2.default.green('✅ ctl check通过，请使用bf publish发布'));
     }
 };
 
